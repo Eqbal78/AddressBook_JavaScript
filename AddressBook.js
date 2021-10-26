@@ -124,3 +124,45 @@ class Contact
 }
 let contact = new Contact("Tony", "Stark", "StarkTower", "Mumbai", "Maharashtra", "101001", "8987224534", "ironman@gmail.com");
 console.log(contact.toString());
+
+// Create AddressBook array
+let AddressBook = [];
+
+// Check if given contact exists in Address book
+function FindContact(firstName,lastName)
+{
+    if (AddressBook.find(person => person.firstName == firstName && person.lastName == lastName))
+        return true;
+}
+
+// Function to add new contact to AddressBook
+function AddContact(firstName, lastName, address, city, state, zip, phoneNumber, email) 
+{
+    try 
+    {
+        let newcontact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+        if (FindContact(firstName, lastName))
+            throw "Contact '" + firstName + " " + lastName + "' already exists";
+        else 
+            AddressBook.push(newcontact);
+    }
+    catch (e) 
+    {
+        console.error(e);
+    }
+}
+
+// print custom horizontal line
+
+
+// Adding contacts to AddressBook
+AddContact("Tony", "Stark", "StarkTower", "Mumbai", "Maharashtra", "101001", "91 8987224534", "ironman@gmail.com");
+AddContact("Steve", "Rogers", "TimesSquare", "Hyderabad", "Telangana", "114224", "91 9876778434", "captainAmerica@yahoo.com");
+AddContact("Bruce", "Banner", "Vandalia", "Chennai", "Tamilnadu", "454241", "91 9403425611", "incredibleHulk@gmail.com");
+AddContact("Peter", "Parker", "Queens", "Bangalore", "Karnataka", "122440", "91 7013456376", "spiderman@yahoo.com");
+AddContact("Pepper", "Potts", "StarkTower", "Mumbai", "Maharashtra", "101001", "91 6300924534", "pepper@stark.co.in");
+AddContact("Thor", "Odinson", "Asgard", "Hyderabad", "Telangana", "114224", "91 9949278434", "thor@yahoo.com");
+AddContact("Stephen", "Strange", "AkshayaNagar","Warangal", "Telangana", "534224", "91 7690778434", "drStrange@rediffmail.com");
+
+// Printing AddressBook
+AddressBook.forEach(contact => console.log(contact.toString()));
