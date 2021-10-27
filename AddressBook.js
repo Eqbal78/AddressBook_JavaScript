@@ -152,9 +152,6 @@ function AddContact(firstName, lastName, address, city, state, zip, phoneNumber,
     }
 }
 
-// print custom horizontal line
-
-
 // Adding contacts to AddressBook
 AddContact("Tony", "Stark", "StarkTower", "Mumbai", "Maharashtra", "101001", "91 8987224534", "ironman@gmail.com");
 AddContact("Steve", "Rogers", "TimesSquare", "Hyderabad", "Telangana", "114224", "91 9876778434", "captainAmerica@yahoo.com");
@@ -165,4 +162,13 @@ AddContact("Thor", "Odinson", "Asgard", "Hyderabad", "Telangana", "114224", "91 
 AddContact("Stephen", "Strange", "AkshayaNagar","Warangal", "Telangana", "534224", "91 7690778434", "drStrange@rediffmail.com");
 
 // Printing AddressBook
-AddressBook.forEach(contact => console.log(contact.toString()));
+function Display()
+{
+    AddressBook.forEach(contact => console.log(contact.toString()));
+}
+
+let index=  AddressBook.findIndex(contact=>contact.firstName == "Thor");
+AddressBook[index].lastName="Jamadar";
+console.log("************************************************************************");
+console.log("After updating Addressbook: ");
+Display();
