@@ -177,3 +177,14 @@ console.log("******************************************************************"
 AddressBook.splice(index, 1);
 console.log("contacts after being deleted");
 Display();
+
+let totalContacts=0;
+function getCount(AddressBook)
+{
+  if (AddressBook != null)
+      totalContacts++;
+    return totalContacts;
+}
+AddressBook.reduce(getCount,1);
+console.log("************************************************************************");
+console.log("Total number of contacts in contactdetails array : " + totalContacts);
