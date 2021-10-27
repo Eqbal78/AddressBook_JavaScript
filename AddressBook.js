@@ -172,3 +172,8 @@ AddressBook[index].lastName="Jamadar";
 console.log("************************************************************************");
 console.log("After updating Addressbook: ");
 Display();
+
+console.log("******************************************************************");
+AddressBook.splice(index, 1);
+console.log("contacts after being deleted");
+Display();
