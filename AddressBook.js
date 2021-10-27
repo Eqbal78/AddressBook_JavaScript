@@ -188,3 +188,14 @@ function getCount(AddressBook)
 AddressBook.reduce(getCount,1);
 console.log("************************************************************************");
 console.log("Total number of contacts in contactdetails array : " + totalContacts);
+
+console.log("************************************************************************");
+let personContact = new Contact('Natasha', 'Romamers', 'DDnagar', 'Mumbai', 'Maharastra', '678543', '91 9234567891', 'Ganesh@gmail.com');
+if(AddressBook.some(contact=>contact.firstName == "Natasha"))
+    console.log("Contact already Exists!");
+else
+{
+    AddressBook.push(personContact);
+    console.log("Contact added succsefully");
+}
+Display();
