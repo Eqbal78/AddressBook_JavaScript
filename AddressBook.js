@@ -199,3 +199,14 @@ else
     console.log("Contact added succsefully");
 }
 Display();
+
+//finding contacts by city
+let findByCity = AddressBook.filter(contact=>contact.city == 'Mumbai');
+console.log("******************************************************");
+findByCity.forEach(contact => console.log(contact.toString()));
+
+
+//finding contacts by state
+let findByState = AddressBook.filter(contact=>contact.state == 'Karnataka');
+console.log("******************************************************");
+findByState.forEach(contact => console.log(contact.toString()));
